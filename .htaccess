@@ -1,0 +1,11 @@
+#To protect our sensitive data from unauthorized users.
+#To aplicable this process of .htaccess, make a small changes in `/etc/httpd/conf/httpd.conf` ---> <Directory /var/www/> AllowOverride All
+#Find the <Directory> section for the /var/www directory that holds the document root. 
+#Turn on .htaccess processing by changing the AllowOverride directive within that block from “None” to “All”.
+AuthType Basic
+
+AuthName "Restricted Access"
+
+AuthUserFile /etc/httpd/.htpasswd
+
+require user <user-name>
